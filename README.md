@@ -3,7 +3,6 @@
 Este repositório contém o código HTML de um plano de aula desenvolvido para ser utilizado por professores da rede estadual de São Paulo. O plano de aula pode ser preenchido diretamente no formulário e gerado em formato PDF para posterior envio por e-mail.
 
 ## Funcionalidades
-
 - Preenchimento de informações como nome do professor, disciplina, data, objetivos da aula, conteúdo programático, entre outros.
 - Geração de um PDF com os dados preenchidos.
 - Envio do plano de aula gerado diretamente por e-mail.
