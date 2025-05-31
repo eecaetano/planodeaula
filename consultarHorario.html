@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Horários</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-size: 18px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .form-group select:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Consulta de Horários
+    </header>
+
+    <div class="container">
+        <h2>Selecione as opções para consultar os horários:</h2>
+
+        <div class="form-group">
+            <label for="periodo">Escolha o Período:</label>
+            <select id="periodo" name="periodo">
+                <option value="manha">Manhã</option>
+                <option value="tarde">Tarde</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="consulta">Consultar Horário:</label>
+            <select id="consulta" name="consulta">
+                <option value="salas">Salas - Séries e Turmas</option>
+                <option value="professores">Horário dos Professores</option>
+                <option value="reserva">Reserva de Salas</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button onclick="consultarHorario()">Consultar</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Desenvolvido por ChatGPT | Página Responsiva</p>
+    </div>
+
+    <script>
+        function consultarHorario() {
+            var periodo = document.getElementById('periodo').value;
+            var consulta = document.getElementById('consulta').value;
+            var link = '';
+
+            // Combinações e redirecionamentos
+            if (periodo === 'manha' && consulta === 'salas') {
+                link = 'https://drive.google.com/file/d/1sRH-DQRCeVn40Ys1wUOS7XV1BjGP-5ux/view?usp=sharing';
+            } else if (periodo === 'tarde' && consulta === 'salas') {
+                link = 'https://drive.google.com/file/d/1DNI4as1tbeIv_e7R-Dt4m2jDa30ULtZi/view?usp=sharing';
+            } else if (periodo === 'manha' && consulta === 'professores') {
+                link = 'https://drive.google.com/file/d/1qMzDWrAmgCW97OHa0SZgmqRLo-oziS34/view?usp=sharing';
+            } else if (periodo === 'tarde' && consulta === 'professores') {
+                link = 'https://drive.google.com/file/d/1gJlCCX35rwc6wwhzl5Vs18B3iBMg7lPT/view?usp=sharing';
+            } else if ((periodo === 'manha' || periodo === 'tarde') && consulta === 'reserva') {
+                link = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTykq4DO_SYAh9me31mET9Ock5ll9iWn9fccOw-pTsPC2DujuIgqBzSrUJyHjRlZA/pubhtml?gid=1231093867&single=true';
+            }
+
+            // Redireciona para o link
+            if (link) {
+                window.location.href = link;
+            } else {
+                alert('Por favor, selecione as opções corretamente!');
+            }
+        }
+    </script>
+</body>
+</html>
