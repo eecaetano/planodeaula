@@ -68,7 +68,7 @@
     .section label { font-weight: bold; }
     .input-field, .large-field {
       width: calc(100% - 20px);
-      padding: 8px 5px;
+      padding: 8px 12px;
       border-radius: 5px;
       border: 1px solid #ccc;
       box-sizing: border-box;
@@ -81,14 +81,8 @@
       overflow-y: hidden;
     }
     .input-field.red-input { color: red; font-weight: bold; }
-    .input-field:not(.red-input) { color: black; font-weight: bold; 
-    }
-     .centralizado {
-      display: flex;
-      justify-content: center; /* Centraliza horizontalmente */
-      align-items: center;     /* Centraliza verticalmente */
-      height: 100vh;           /* Altura total da janela */
-     }
+    .input-field:not(.red-input) { color: black; font-weight: bold; }
+
     .buttons {
       display: flex;
       justify-content: space-between;
@@ -169,26 +163,24 @@
             <label>Data:</label>
             <input type="text" class="input-field red-input" placeholder="DD/MM/AAAA">
           </div>
-            <div style="flex: 1;">
-            <label>Assinatura do Professor (upload de imagem):</label>
+       
+ <div style="flex: 1;">
+        <div style="margin-top: 15px;">
+          <label>Assinar (upload):</label>
           <input type="file" id="assinatura" accept="image/png, image/jpeg" onchange="mostrarAssinatura()" />
-          <div id="assinatura-preview" style="margin-top: 6px;"></div>
+          <div id="assinatura-preview" style="margin-top: 10px;"></div>
         </div>
-        </div>
-        
-        <div class="centralizado">
-        <div style="margin-top: 20px;">
-        <button type="button" onclick="toggleCanvas()" style="margin-bottom: 10px;">Assinar manualmente</button>
+ </div>
+        <div style="margin-top: 20px;">
+          <button type="button" onclick="toggleCanvas()" style="margin-bottom: 10px;">Assinar (manua)</button>
           <div id="canvas-container" style="display: none;">
             <canvas id="signature-pad" width="400" height="120" style="border: 1px solid #ccc; background: #fff;"></canvas><br>
             <button type="button" onclick="clearSignature()">Limpar</button>
             <button type="button" onclick="saveSignature()">Salvar Assinatura</button>
           </div>
-          </div>
-          </div>
-  </div>
-    </div>
+        </div>
       </div>
+    </div>
     <div class="buttons">
       <button onclick="window.print()">Salvar em PDF</button>
       <button onclick="document.querySelectorAll('.input-field, .large-field').forEach(f => f.value = '')">Novo Plano</button>
