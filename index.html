@@ -68,7 +68,7 @@
     .section label { font-weight: bold; }
     .input-field, .large-field {
       width: calc(100% - 20px);
-      padding: 8px 12px;
+      padding: 8px 5px;
       border-radius: 5px;
       border: 1px solid #ccc;
       box-sizing: border-box;
@@ -172,12 +172,11 @@
             <div style="flex: 1;">
             <label>Assinatura do Professor (upload de imagem):</label>
           <input type="file" id="assinatura" accept="image/png, image/jpeg" onchange="mostrarAssinatura()" />
-          <div id="assinatura-preview" style="margin-top: 10px;"></div>
-        </div>
+          <div id="assinatura-preview" style="margin-top: 6px;"></div>
         </div>
         <div class="centralizado">
-    <div style="margin-top: 20px;">
-    <button type="button" onclick="toggleCanvas()" style="margin-bottom: 10px;">Assinar manualmente</button>
+        <div style="margin-top: 20px;">
+        <button type="button" onclick="toggleCanvas()" style="margin-bottom: 10px;">Assinar manualmente</button>
           <div id="canvas-container" style="display: none;">
             <canvas id="signature-pad" width="400" height="120" style="border: 1px solid #ccc; background: #fff;"></canvas><br>
             <button type="button" onclick="clearSignature()">Limpar</button>
